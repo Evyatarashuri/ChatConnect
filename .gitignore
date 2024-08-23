@@ -1,0 +1,15 @@
+# Sensitive files
+.env
+venv/
+db.sqlite3
+local_settings.py
+
+# Python and Django-specific files
+__pycache__/
+*.py[cod]
+static/
+media/
+*.pyc
+
+# Virtual environment
+venv/

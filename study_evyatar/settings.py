@@ -59,7 +59,9 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['evyatar-s-site-production-589e']
+CSRF_TRUSTED_ORIGINS = ['https://evyatar-s-site-production-589e.railway.app',
+                        'http://evyatar-s-site-production-589e.railway.app',
+                        ]
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

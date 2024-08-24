@@ -66,8 +66,13 @@ CSRF_TRUSTED_ORIGINS = ['https://evyatar-s-site-production-589e.railway.app',
                         ]
 
 CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    'https://evyatar-s-site-production-589e.railway.app',
+]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

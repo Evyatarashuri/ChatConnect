@@ -28,9 +28,7 @@ load_dotenv()
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://evyatar-s-site-production-589e.railway.app',
-                 'evyatar-s-site-production-589e',
-                 ]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

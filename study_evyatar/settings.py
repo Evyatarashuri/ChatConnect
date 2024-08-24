@@ -29,7 +29,8 @@ load_dotenv()
 DEBUG = False
 
 ALLOWED_HOSTS = ['https://evyatar-s-site-production-589e.railway.app',
-                 'evyatar-s-site-production-589e']
+                 'evyatar-s-site-production-589e',
+                 ]
 
 
 # Application definition

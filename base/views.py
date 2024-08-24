@@ -70,6 +70,7 @@ def logoutUser(request):
 
 
 #HOME FUNCTION 
+@csrf_exempt
 def home(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
 
@@ -95,6 +96,7 @@ def home(request):
     })
 
 #ROOM FUNCTION 
+@csrf_exempt
 def room(request, pk):
     room = Room.objects.get(id=pk)
     room_messages = room.message_set.all()
@@ -113,6 +115,7 @@ def room(request, pk):
     return render(request, 'base/room.html', context)
 
 #USER-PROFILE FUNC
+@csrf_exempt
 def userProfile(request, pk):
     user = User.objects.get(id=pk) 
     rooms = user.room_set.all()
@@ -127,6 +130,7 @@ def userProfile(request, pk):
 
 
 #CREATE-ROOM FUNCTION 
+@csrf_exempt
 @login_required(login_url='login')
 def createRoom(request): 
     form = RoomForm()
@@ -147,6 +151,7 @@ def createRoom(request):
     return render(request, 'base/room_form.html', context)
 
 #UPDATE-ROOM FUNCTION
+@csrf_exempt
 @login_required(login_url='login')
 def updateRoom(request, pk):
     room = Room.objects.get(id=pk)
@@ -169,6 +174,7 @@ def updateRoom(request, pk):
     return render(request, 'base/room_form.html', context)
 
 #DELETE-ROOM FUNCTION
+@csrf_exempt
 def deleteRoom(request, pk):
     room = Room.objects.get(id=pk)
 
@@ -184,6 +190,7 @@ def deleteRoom(request, pk):
     })
 
 # DELETE-MESSAGE
+
 login_required(login_url='login') 
 def deleteMessage(request, pk):
     message = Message.objects.get(id=pk)
@@ -196,6 +203,7 @@ def deleteMessage(request, pk):
         return redirect('home')
     return render(request, 'base/delete.html', {'obj': message}) 
 
+@csrf_exempt
 @login_required(login_url='login')
 def updateUser(request):
    user = request.user

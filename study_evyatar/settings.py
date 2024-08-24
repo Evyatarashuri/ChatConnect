@@ -59,6 +59,9 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['evyatar-s-site-production-589e']
+
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'study_evyatar.urls'

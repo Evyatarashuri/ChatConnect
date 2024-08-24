@@ -191,7 +191,8 @@ def deleteRoom(request, pk):
 
 # DELETE-MESSAGE
 
-login_required(login_url='login') 
+login_required(login_url='login')
+@csrf_exempt
 def deleteMessage(request, pk):
     message = Message.objects.get(id=pk)
 

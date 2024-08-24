@@ -151,14 +151,10 @@ STATIC_URL = '/static/'
 # Directory where collectstatic will collect static files for deployment
 # Media files (Uploaded files)
 MEDIA_URL = '/images/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles/images')
 
 # Additional locations of static files
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 

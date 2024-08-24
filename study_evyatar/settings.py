@@ -28,7 +28,8 @@ load_dotenv()
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://evyatar-s-site-production-589e.railway.app',
+                 'evyatar-s-site-production-589e']
 
 
 # Application definition
@@ -43,12 +44,14 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'base',
+    'corsheaders',
 ]
 
 AUTH_USER_MODEL = 'base.User'
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -63,6 +66,9 @@ CSRF_TRUSTED_ORIGINS = ['https://evyatar-s-site-production-589e.railway.app',
                         'http://evyatar-s-site-production-589e.railway.app',
                         ]
 
+CSRF_COOKIE_SECURE = True
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

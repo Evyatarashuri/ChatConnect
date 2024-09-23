@@ -1,0 +1,25 @@
+services:
+  web:
+    build:
+      context: ./django/
+    command: sh -c "python manage.py collectstatic --noinput && gunicorn study_evyatar.wsgi:application --bind 0.0.0.0:8000"
+    volumes:
+      - ./django/:/usr/src/app/
+    expose:
+      - 8000
+    env_file:
+      - ./.env/dev.env
+
+  nginx:
+    build:
+      context: ./nginx/
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./django/staticfiles/:/home/app/staticfiles/
+    depends_on:
+      - web
+
+volumes:
+ static_files:

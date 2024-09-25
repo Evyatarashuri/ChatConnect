@@ -1,3 +1,6 @@
+<h1 style="color:blue;">ChatConnect</h1>
+
+
 ![home page](https://github.com/Evyatarashuri/ChatConnect/blob/main/photos/photo1.png)
 
 ![Evyatar's Profile](https://github.com/Evyatarashuri/ChatConnect/blob/main/photos/photo2.png)
